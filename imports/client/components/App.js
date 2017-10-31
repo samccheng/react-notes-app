@@ -46,6 +46,7 @@ const App = () => {
           <Route exact path="/" render={onLoginPublicPage} />
           <Route path="/signup" render={onSignUpPublicPage} />
           <Route path="/dashboard" render={onEnterPrivatePage} />
+          <Route path="/dashboard/:id" render={onEnterPrivatePage} />
           <Route component={NotFound} />
         </Switch>
       </div>
