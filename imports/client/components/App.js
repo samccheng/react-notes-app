@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
+import { Session } from 'meteor/session'
 import Signup from './Signup'
 import Dashboard from './Dashboard'
 import NotFound from './NotFound'
@@ -24,6 +25,22 @@ const onEnterPrivatePage = () => (
   !Meteor.userId() ? (<Signup />) : (<Dashboard />)
 )
 
+const onEnterNotePage = ({match}) => {
+  if(!Meteor.userId()) {
+    return (
+      <Login />
+    )
+  } else {
+    Session.set('selectedNoteId', match.params.id)
+    return (
+      <Dashboard />
+    )
+  }
+}
+
+
+
+
 export const onAuth = (isAuthenticated) => {
   const pathname = history.location.pathname
   const unAuthenticatedPage = unAuthenticatedPages.includes(pathname)
@@ -34,7 +51,6 @@ export const onAuth = (isAuthenticated) => {
   } else if (authenticatedPage && !isAuthenticated) {
     history.push('/')
   }
-  console.log(pathname)
   console.log('isAuthenticated', isAuthenticated)
 }
 
@@ -45,8 +61,8 @@ const App = () => {
         <Switch>
           <Route exact path="/" render={onLoginPublicPage} />
           <Route path="/signup" render={onSignUpPublicPage} />
-          <Route path="/dashboard" render={onEnterPrivatePage} />
-          <Route path="/dashboard/:id" render={onEnterPrivatePage} />
+          <Route exact path="/dashboard" render={onEnterPrivatePage} />
+          <Route path="/dashboard/:id" render={onEnterNotePage} />
           <Route component={NotFound} />
         </Switch>
       </div>
