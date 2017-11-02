@@ -1,16 +1,22 @@
 //colors
 $grey: #ddd;
-$primary-color: #5b4681;
+$primary-color: #397ab1;
 $light-grey: #f9f9f9;
 $dark-grey: #777;
 
+//body
+$body-background-color: #fafafa;
+$body-default-color: #333;
+$body-default-font-family: Helvetica, Arial, sans-serif;
+
 //sizes
 $space: 1.4rem;
-$site-max-width: 50rem;
+$space-lg: 2.8rem;
+$site-max-width: 100rem;
 
 //font-sizes
 $base-font-size: 1.4rem;
-$lg-font-size: 1.8rem;
+$lg-font-size: 2.2rem;
 
 //form-input
 $input-border: $grey;
@@ -19,6 +25,10 @@ $input-spacing: 1rem;
 //box view
 $boxed-view-overlay-bg: $primary-color;
 $boxed-view-bg: white;
+$boxed-view-border-color: $grey;
+
+//header
+$header-height: 6rem;
 
 //button
 $button-bg: $primary-color;
@@ -32,3 +42,8 @@ $button-secondary-border-color: $grey;
 $item-bg: $light-grey;
 $item-border: darken($item-bg, 8%);
 $item-text-color: $dark-grey;
+
+//wrapper
+$wrapper-sidebar-w: 30rem;
+$wrapper-main-w: calc(#{$site-max-width} - #{$wrapper-sidebar-w});
+$wrapper-height: calc(100vh - #{$header-height});

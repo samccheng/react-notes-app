@@ -1,5 +1,18 @@
 .wrapper {
+  display: flex;
+  height: $wrapper-height;
   max-width: $site-max-width;
   margin: 0 auto;
-  padding: $space;
+  padding: $space-lg $space;
+}
+
+.wrapper__sidebar {
+  display: flex;
+  padding-right: $space-lg;
+  width: $wrapper-sidebar-w;
+}
+
+.wrapper__main {
+  display: flex;
+  width: $wrapper-main-w;
 }

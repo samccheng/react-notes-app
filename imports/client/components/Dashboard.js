@@ -8,8 +8,8 @@ export default () => {
     <div>
       <PrivateHeader title="dashboard" />
       <div className="wrapper">
-        <NoteList />
-        <Editor />
+        <div className="wrapper__sidebar"><NoteList /></div>
+        <div className="wrapper__main"><Editor /></div>
       </div>
     </div>
   )
