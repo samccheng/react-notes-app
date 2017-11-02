@@ -39,9 +39,7 @@ $button-secondary-color: $dark-grey;
 $button-secondary-border-color: $grey;
 
 //item
-$item-bg: $light-grey;
-$item-border: darken($item-bg, 8%);
-$item-text-color: $dark-grey;
+$item-border-w: 4px;
 
 //wrapper
 $wrapper-sidebar-w: 30rem;
