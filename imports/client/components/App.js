@@ -26,6 +26,7 @@ const onEnterPrivatePage = () => (
 )
 
 const onEnterNotePage = ({match}) => {
+  console.log(match)
   if(!Meteor.userId()) {
     return (
       <Login />
