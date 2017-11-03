@@ -10,13 +10,25 @@
 }
 
 .wrapper__sidebar {
-  display: none;
-  padding-right: $space-lg;
-  width: $wrapper-sidebar-w;
+  display: flex;
+  transition: left .3s ease;
+
+  position: fixed;
+  top: $header-height;
+  left: -100vw;
+  bottom: 0;
+  width: 100vw;
 
   @include desktop {
     display: flex;
+    padding-right: $space-lg;
+    position: static;
+    width: $wrapper-sidebar-w;
   }
+}
+
+.menu .wrapper__sidebar {
+  left: 0;
 }
 
 .wrapper__main {
